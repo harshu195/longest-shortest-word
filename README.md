@@ -1,0 +1,2 @@
+# longest-shortest-word
+  Write a method or function in the major programming language of your choice that returns the longest word in a sentence and its length. For example, “The cow jumped over the moon.” should return “jumped” and 6. Write unit tests, reworking code as needed Add a method that returns the shortest word and length with unit tests Create a README documenting any assumptions you made and including instructions on how to build and execute your tests.  
