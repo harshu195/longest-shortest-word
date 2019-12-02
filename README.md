@@ -1,4 +1,5 @@
 # longest-shortest-word
+
   Write a method or function in the major programming language of your choice that returns the longest word in a sentence and its length. 
   For example, “The cow jumped over the moon.” should return “jumped” and 6. 
   Write unit tests, reworking code as needed Add a method that returns the shortest word and length with unit tests 
@@ -19,6 +20,37 @@ Build
 	-	Also have added a jar file for standalone exectuion location - longest-shortest-word/jar/longest-shortest-word-1.0-SNAPSHOT.jar
 
 Junit
+
 	-	Unit test can be ran indepedently using maven clean test or by loading the project into IDE and executing each test cases indepedently
 	-	Test cases are written for getting both the shortest and longest word and its corresponding length
 	
+Algo/Method/Function 
+
+
+
+    public static void getLongestAndShortestWordInASentence(String sentence, LongestAndShortestWordInASentence longestAndShortestWordInASentence){
+        int tempLength = 0;
+        String[] eachWordArray = sentence.split(" ");
+        boolean firstTime = false;
+        for (String eachWord : eachWordArray) {
+            tempLength = eachWord.length();
+            if (firstTime == false) {
+                firstTime = true;
+                longestAndShortestWordInASentence.setShortestWordLength(tempLength);
+                longestAndShortestWordInASentence.setShortestWord(eachWord);
+                longestAndShortestWordInASentence.setLongestWordLength(tempLength);
+                longestAndShortestWordInASentence.setLongestWord(eachWord);
+            }
+
+            if (tempLength > 0) {
+                if (tempLength < longestAndShortestWordInASentence.getShortestWordLength()) {
+                    longestAndShortestWordInASentence.setShortestWordLength(tempLength);
+                    longestAndShortestWordInASentence.setShortestWord(eachWord);
+                } else if (tempLength > longestAndShortestWordInASentence.getLongestWordLength()) {
+                    longestAndShortestWordInASentence.setLongestWordLength(tempLength);
+                    longestAndShortestWordInASentence.setLongestWord(eachWord);
+                }
+            }
+        }
+
+    }
